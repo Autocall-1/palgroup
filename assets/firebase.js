@@ -12,12 +12,13 @@ import { getFirestore, doc, setDoc, getDoc,
 
 // ── PASTE YOUR FIREBASE CONFIG ────────────────────────────────────────────────
 export const FIREBASE_CONFIG = {
-  apiKey:            "YOUR_API_KEY",
-  authDomain:        "YOUR_PROJECT.firebaseapp.com",
-  projectId:         "YOUR_PROJECT_ID",
-  storageBucket:     "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId:             "YOUR_APP_ID"
+  apiKey: "AIzaSyC3sIauDUSY-q7ZWx_n2EpIsctZsWGE6Bs",
+  authDomain: "data-credit-a48bd.firebaseapp.com",
+  projectId: "data-credit-a48bd",
+  storageBucket: "data-credit-a48bd.firebasestorage.app",
+  messagingSenderId: "154490671024",
+  appId: "1:154490671024:web:e87588a05df41c4c625075",
+  measurementId: "G-5E6DF2Y208"
 };
 
 // ── RAZORPAY KEY (public key — safe to expose) ────────────────────────────────

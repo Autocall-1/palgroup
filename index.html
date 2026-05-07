@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeadMachine — Instagram DM Automation for India</title>
+  <meta name="description" content="Instagram DMs automatically leads mein convert karo. 7 din free trial. Made in India.">
+  <link rel="stylesheet" href="assets/global.css">
+  <style>
+    .hero{padding:90px 0 80px;text-align:center}
+    .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--saffron);margin-bottom:18px;display:flex;align-items:center;justify-content:center;gap:10px}
+    .eyebrow::before,.eyebrow::after{content:'';width:24px;height:1px;background:var(--saffron)}
+    h1.big{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,9vw,120px);line-height:.9;letter-spacing:-1px;margin-bottom:24px}
+    h1.big .o{color:var(--saffron)} h1.big .dim{-webkit-text-stroke:1.5px var(--w3);color:transparent}
+    .hero-sub{font-size:17px;color:var(--w2);max-width:500px;margin:0 auto 40px;line-height:1.7}
+    .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .hero-note{font-family:'DM Mono',monospace;font-size:11px;color:var(--w3);margin-top:16px}
+    .stats-row{display:flex;gap:48px;justify-content:center;margin-top:64px;padding-top:40px;border-top:1px solid var(--edge);flex-wrap:wrap}
+    .stat-num{font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--saffron);letter-spacing:-1px;line-height:1}
+    .stat-lbl{font-size:12px;color:var(--w3);font-family:'DM Mono',monospace;letter-spacing:1px}
+    .section{padding:80px 0}
+    .sec-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--saffron);display:block;margin-bottom:12px}
+    .sec-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,64px);line-height:.95;margin-bottom:16px}
+    .sec-sub{font-size:16px;color:var(--w2);max-width:480px;line-height:1.7}
+    .steps-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:56px;position:relative}
+    .steps-grid::after{content:'';position:absolute;top:35px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--saffron) 30%,var(--saffron) 70%,transparent)}
+    .step{text-align:center;padding:0 12px;position:relative;z-index:1}
+    .step-node{width:70px;height:70px;border-radius:14px;margin:0 auto 16px;background:var(--ink2);border:1px solid var(--edge);display:grid;place-items:center;font-size:26px;transition:all .3s;position:relative}
+    .step:hover .step-node{border-color:var(--saffron);box-shadow:0 0 30px rgba(255,107,0,.2);transform:translateY(-6px)}
+    .step-n{position:absolute;top:-8px;right:-8px;width:20px;height:20px;border-radius:50%;background:var(--saffron);color:#000;font-family:'DM Mono',monospace;font-size:10px;display:grid;place-items:center}
+    .step-lbl{font-size:13px;font-weight:700;margin-bottom:4px} .step-sub{font-size:12px;color:var(--w3)}
+    .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--edge);border:1px solid var(--edge);border-radius:var(--r2);overflow:hidden;margin-top:56px}
+    .feat-cell{background:var(--ink);padding:28px;transition:background .2s}
+    .feat-cell:hover{background:var(--ink2)}
+    .feat-icon{font-size:28px;margin-bottom:14px} .feat-title{font-size:15px;font-weight:700;margin-bottom:7px} .feat-desc{font-size:13px;color:var(--w2);line-height:1.6}
+    .cta-wrap{padding:0 0 80px}
+    .cta-box{background:var(--ink2);border:1px solid var(--edge);border-radius:20px;padding:72px 40px;text-align:center;position:relative;overflow:hidden}
+    .cta-box::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;top:-200px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(255,107,0,.06),transparent 70%)}
+    .cta-box h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6vw,80px);line-height:.95;margin-bottom:14px}
+    .cta-box p{font-size:16px;color:var(--w2);margin-bottom:32px}
+    @media(max-width:900px){.steps-grid{grid-template-columns:repeat(2,1fr);gap:24px}.steps-grid::after{display:none}.feat-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav class="navbar z1">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="o">L</span>EAD<span class="o">M</span>ACHINE</a>
+    <div class="nav-links">
+      <a href="#how" class="nav-link">How it Works</a>
+      <a href="pages/pricing.html" class="nav-link">Pricing</a>
+      <a href="pages/about.html" class="nav-link">About</a>
+      <a href="pages/contact.html" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="pages/login.html" class="btn btn-ghost btn-sm">Login</a>
+      <a href="pages/signup.html" class="btn btn-primary btn-sm">7 Din Free →</a>
+    </div>
+  </div>
+</nav>
+<main class="z1">
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow rise">Instagram Graph API · Razorpay · Firebase · India 🇮🇳</div>
+      <h1 class="big rise d1"><span class="dim">INSTAGRAM</span><br><span class="o">LEADS</span><br>AUTOPILOT</h1>
+      <p class="hero-sub rise d2">User DM kare — bot automatically qualify kare, link bheje, lead capture kare। 7 din free mein try karo।</p>
+      <div class="hero-actions rise d3">
+        <a href="pages/signup.html" class="btn btn-primary btn-xl">🚀 FREE TRIAL SHURU KARO</a>
+        <a href="pages/pricing.html" class="btn btn-outline btn-lg">Pricing Dekho →</a>
+      </div>
+      <div class="hero-note rise d4">✓ 7 din free · ✓ Card nahi chahiye · ✓ Cancel anytime · ✓ Meta compliant</div>
+      <div class="stats-row rise d5">
+        <div><div class="stat-num">₹0</div><div class="stat-lbl">Setup Cost</div></div>
+        <div><div class="stat-num">7</div><div class="stat-lbl">Day Free Trial</div></div>
+        <div><div class="stat-num">6</div><div class="stat-lbl">Step Auto Flow</div></div>
+        <div><div class="stat-num">24/7</div><div class="stat-lbl">Bot Active</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="section" id="how">
+    <div class="wrap">
+      <span class="sec-tag">Process</span>
+      <h2 class="sec-h">5 STEPS MEIN<br>LEAD READY</h2>
+      <p class="sec-sub">User "hi" bheje aur system automatically sab handle kare।</p>
+      <div class="steps-grid">
+        <div class="step rise d1"><div class="step-node"><span class="step-n">1</span>💬</div><div class="step-lbl">DM Aata Hai</div><div class="step-sub">User message karta hai</div></div>
+        <div class="step rise d2"><div class="step-node"><span class="step-n">2</span>🎯</div><div class="step-lbl">Trigger Match</div><div class="step-sub">Keyword detect hota hai</div></div>
+        <div class="step rise d3"><div class="step-node"><span class="step-n">3</span>🤖</div><div class="step-lbl">Bot Q&A</div><div class="step-sub">6 questions automatically</div></div>
+        <div class="step rise d4"><div class="step-node"><span class="step-n">4</span>🔗</div><div class="step-lbl">Link Bheja</div><div class="step-sub">Website auto-send</div></div>
+        <div class="step rise d5"><div class="step-node"><span class="step-n">5</span>✅</div><div class="step-lbl">Lead Captured</div><div class="step-sub">Dashboard mein save</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <span class="sec-tag">Features</span>
+      <h2 class="sec-h">SABKUCH EK JAGAH</h2>
+      <div class="feat-grid">
+        <div class="feat-cell rise d1"><div class="feat-icon">📱</div><div class="feat-title">Instagram Graph API</div><div class="feat-desc">Direct Meta Webhook। No third-party। Fully policy compliant।</div></div>
+        <div class="feat-cell rise d2"><div class="feat-icon">🌐</div><div class="feat-title">Hinglish + English</div><div class="feat-desc">User ki language auto-detect। Smart replies।</div></div>
+        <div class="feat-cell rise d3"><div class="feat-icon">💳</div><div class="feat-title">Razorpay Payment</div><div class="feat-desc">UPI, cards, netbanking। ₹499/month। Cancel anytime।</div></div>
+        <div class="feat-cell rise d1"><div class="feat-icon">👥</div><div class="feat-title">Multi-User SaaS</div><div class="feat-desc">Har user ka alag account, alag Instagram, alag leads।</div></div>
+        <div class="feat-cell rise d2"><div class="feat-icon">📊</div><div class="feat-title">Lead Dashboard</div><div class="feat-desc">Real-time stats, CSV export, lead management।</div></div>
+        <div class="feat-cell rise d3"><div class="feat-icon">👑</div><div class="feat-title">Admin Panel</div><div class="feat-desc">Users manage karo, revenue dekho, bots control karo।</div></div>
+      </div>
+    </div>
+  </section>
+  <div class="cta-wrap"><div class="wrap"><div class="cta-box rise">
+    <h2>AAJ SHURU KARO 🚀</h2>
+    <p>7 din free। Card nahi chahiye। Setup 5 min mein।</p>
+    <a href="pages/signup.html" class="btn btn-primary btn-xl">FREE TRIAL SHURU KARO →</a>
+  </div></div></div>
+</main>
+<footer class="footer z1">
+  <div class="footer-inner">
+    <div class="footer-logo"><span class="o">L</span>M</div>
+    <div class="footer-links">
+      <a href="pages/pricing.html" class="footer-link">Pricing</a>
+      <a href="pages/about.html" class="footer-link">About</a>
+      <a href="pages/contact.html" class="footer-link">Contact</a>
+      <a href="pages/terms.html" class="footer-link">Terms</a>
+      <a href="pages/privacy.html" class="footer-link">Privacy</a>
+    </div>
+    <div class="footer-copy">© 2025 LEADMACHINE · MADE IN 🇮🇳</div>
+  </div>
+</footer>
+</body>
+</html>

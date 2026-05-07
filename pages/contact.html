@@ -1,0 +1,26 @@
+<div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--saffron);margin-bottom:12px">Contact</div>
+<div class="dh">BAAT<br>KARO</div>
+<div class="dm">24hr response guaranteed</div>
+<p>Koi bhi sawaal ho — setup help, Instagram issue, billing — hum yahan hain।</p>
+<h2>Contact Info</h2>
+<ul><li>📧 Email: <a href="mailto:support@leadmachine.in">support@leadmachine.in</a></li><li>💬 WhatsApp: <a href="https://wa.me/919999999999">+91 99999 99999</a></li><li>📱 Instagram: <a href="https://instagram.com/leadmachine">@leadmachine</a></li><li>⏰ Hours: Mon–Sat, 10am–7pm IST</li></ul>
+<h2>Quick Form</h2>
+<div style="background:var(--ink2);border:1px solid var(--edge);border-radius:var(--r2);padding:24px;margin-top:16px">
+<div id="f-area">
+<div class="form-group"><label class="form-label">Naam</label><input class="form-input" id="cf-name" type="text" placeholder="Rahul Sharma" required></div>
+<div class="form-group"><label class="form-label">Email</label><input class="form-input" id="cf-email" type="email" placeholder="aap@example.com" required></div>
+<div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea" id="cf-msg" placeholder="Apna sawaal likhao..."></textarea></div>
+<button class="btn btn-primary" id="cf-btn" onclick="sendContact()">📨 Message Bhejo →</button>
+</div>
+<div id="f-done" style="display:none;text-align:center;padding:24px"><div style="font-size:48px;margin-bottom:12px">🎉</div><div style="font-family:'Bebas Neue',sans-serif;font-size:28px">MESSAGE AA GAYA!</div><div style="color:var(--w2);font-size:13px">24 hours mein reply karenge।</div></div>
+</div>
+</div></div></main>
+<footer class="footer z1"><div class="footer-inner"><div class="footer-logo"><span class="o">L</span>M</div><div class="footer-links"><a href="about.html" class="footer-link">About</a><a href="contact.html" class="footer-link">Contact</a><a href="terms.html" class="footer-link">Terms</a><a href="privacy.html" class="footer-link">Privacy</a></div><div class="footer-copy">© 2025 LEADMACHINE · 🇮🇳</div></div></footer>
+<script>
+window.sendContact=async function(){
+  const btn=document.getElementById('cf-btn');btn.disabled=true;btn.textContent='Sending...';
+  await new Promise(r=>setTimeout(r,1000));
+  document.getElementById('f-area').style.display='none';document.getElementById('f-done').style.display='block';
+};
+</script>
+</body></html>

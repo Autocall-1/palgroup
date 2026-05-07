@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing — LeadMachine</title>
+  <link rel="stylesheet" href="../assets/global.css">
+  <style>
+    main { padding: 80px 0 100px; }
+    .pricing-hero { text-align: center; margin-bottom: 72px; }
+    .eyebrow { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--saffron); margin-bottom:14px; display:block; }
+    h1.display { font-family:'Bebas Neue',sans-serif; font-size:clamp(56px,8vw,100px); line-height:.92; letter-spacing:-1px; margin-bottom:20px; }
+    h1.display .o { color:var(--saffron); }
+    .hero-sub { font-size:17px; color:var(--w2); max-width:480px; margin:0 auto; line-height:1.7; }
+
+    /* Toggle */
+    .billing-toggle { display:flex; align-items:center; justify-content:center; gap:14px; margin:40px 0 56px; }
+    .toggle-label { font-size:13px; font-weight:600; color:var(--w3); }
+    .toggle-label.active { color:var(--w); }
+    .tog { width:48px; height:26px; border-radius:13px; background:var(--edge2); border:none; cursor:pointer; position:relative; transition:background .2s; }
+    .tog.on { background:var(--saffron); }
+    .tog::after { content:''; position:absolute; top:3px; left:3px; width:20px; height:20px; border-radius:50%; background:#fff; transition:transform .2s; }
+    .tog.on::after { transform:translateX(22px); }
+
+    /* Cards */
+    .plans-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:800px; margin:0 auto; }
+
+    .plan-card {
+      background:var(--ink2); border:1px solid var(--edge);
+      border-radius:20px; padding:36px; position:relative; overflow:hidden;
+      transition:border-color .2s, transform .2s;
+    }
+    .plan-card:hover { transform:translateY(-4px); border-color:var(--edge2); }
+    .plan-card.hot {
+      border-color:var(--saffron);
+      background:linear-gradient(135deg, var(--ink2) 0%, #1a0a00 100%);
+      box-shadow: 0 0 60px rgba(255,107,0,.1);
+    }
+    .plan-card.hot::before {
+      content:'BEST VALUE';
+      position:absolute; top:22px; right:-28px;
+      background:var(--saffron); color:#000;
+      font-family:'DM Mono',monospace; font-size:9px; font-weight:500; letter-spacing:2px;
+      padding:4px 36px; transform:rotate(35deg);
+    }
+
+    .plan-badge { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--w3); margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+    .plan-badge .dot { width:6px; height:6px; border-radius:50%; background:var(--green); }
+    .plan-price-wrap { margin-bottom:6px; display:flex; align-items:flex-end; gap:6px; }
+    .plan-price { font-family:'Bebas Neue',sans-serif; font-size:64px; line-height:1; letter-spacing:-1px; }
+    .plan-price.saffron { color:var(--saffron); }
+    .plan-price-unit { font-size:14px; color:var(--w3); padding-bottom:10px; }
+    .plan-desc { font-size:13px; color:var(--w2); margin-bottom:28px; line-height:1.6; }
+
+    .plan-trial-badge {
+      display:inline-flex; align-items:center; gap:6px;
+      background:rgba(0,255,136,.08); border:1px solid rgba(0,255,136,.2);
+      color:var(--green); font-size:11px; font-weight:700; letter-spacing:.5px;
+      padding:5px 12px; border-radius:20px; margin-bottom:20px;
+    }
+
+    .features-list { list-style:none; margin-bottom:32px; }
+    .features-list li { display:flex; align-items:flex-start; gap:10px; font-size:14px; padding:9px 0; border-bottom:1px solid var(--edge); line-height:1.5; }
+    .features-list li:last-child { border:none; }
+    .fi-check { color:var(--green); flex-shrink:0; margin-top:1px; }
+    .fi-cross { color:var(--w3); flex-shrink:0; margin-top:1px; }
+    .fi-text { color:var(--w2); }
+    .fi-text.dim { color:var(--w3); }
+
+    /* FAQ */
+    .faq-section { max-width:680px; margin:80px auto 0; }
+    .faq-title { font-family:'Bebas Neue',sans-serif; font-size:40px; text-align:center; margin-bottom:32px; }
+    .faq-item { border-bottom:1px solid var(--edge); }
+    .faq-q { width:100%; background:none; border:none; cursor:pointer; color:var(--w); font-family:'DM Sans',sans-serif; font-size:15px; font-weight:600; padding:18px 0; text-align:left; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .faq-q .arrow { color:var(--saffron); font-size:18px; transition:transform .2s; flex-shrink:0; }
+    .faq-q.open .arrow { transform:rotate(45deg); }
+    .faq-a { font-size:14px; color:var(--w2); line-height:1.7; padding-bottom:18px; display:none; }
+    .faq-a.open { display:block; }
+
+    /* Guarantee */
+    .guarantee-box {
+      max-width:600px; margin:56px auto 0; text-align:center;
+      background:var(--ink2); border:1px solid var(--edge); border-radius:20px; padding:40px;
+    }
+    .guarantee-icon { font-size:48px; margin-bottom:14px; }
+    .guarantee-title { font-family:'Bebas Neue',sans-serif; font-size:28px; margin-bottom:10px; }
+    .guarantee-text { font-size:14px; color:var(--w2); line-height:1.7; }
+
+    @media(max-width:680px) { .plans-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<div class="noise"></div>
+<nav class="navbar z1">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="o">L</span>EAD<span class="o">M</span>ACHINE</a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="pricing.html" class="nav-link active">Pricing</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="login.html" class="btn btn-ghost btn-sm">Login</a>
+      <a href="signup.html" class="btn btn-primary btn-sm">Start Free →</a>
+    </div>
+  </div>
+</nav>
+
+<main class="z1">
+  <div class="wrap">
+    <div class="pricing-hero rise">
+      <span class="eyebrow">Pricing</span>
+      <h1 class="display">SIMPLE<br><span class="o">HONEST</span><br>PRICING</h1>
+      <p class="hero-sub">7 din free trial — koi card nahi chahiye। Pasand aaye to ₹499/month। Kabhi bhi cancel karo।</p>
+    </div>
+
+    <div class="plans-grid">
+      <!-- FREE TRIAL -->
+      <div class="plan-card rise d2">
+        <div class="plan-badge"><span class="dot"></span> Free Trial</div>
+        <div class="plan-price-wrap">
+          <div class="plan-price">₹0</div>
+          <div class="plan-price-unit">/ 7 days</div>
+        </div>
+        <div class="plan-trial-badge">⏰ 7 din ka free trial</div>
+        <p class="plan-desc">Puri features test karo bina kisi payment ke। Credit card bilkul nahi chahiye।</p>
+        <ul class="features-list">
+          <li><span class="fi-check">✓</span><span class="fi-text">1 DM Template (Lead Funnel)</span></li>
+          <li><span class="fi-check">✓</span><span class="fi-text">100 leads capture</span></li>
+          <li><span class="fi-check">✓</span><span class="fi-text">Instagram Graph API</span></li>
+          <li><span class="fi-check">✓</span><span class="fi-text">CSV Export</span></li>
+          <li><span class="fi-check">✓</span><span class="fi-text">Live Simulator</span></li>
+          <li><span class="fi-check">✓</span><span class="fi-text">Firebase secured</span></li>
+          <li><span class="fi-cross">✗</span><span class="fi-text dim">Unlimited templates</span></li>
+          <li><span class="fi-cross">✗</span><span class="fi-text dim">Priority support</span></li>
+        </ul>
+        <a href="signup.html" class="btn btn-outline btn-full">7 Din Free Start Karo →</a>
+      </div>
+
+      <!-- PRO -->
+      <div class="plan-card hot rise d3">
+        <div class="plan-badge"><span class="dot"></span> Pro Plan</div>
+        <div class="plan-price-wrap">
+          <div class="plan-price saffron">₹499</div>
+          <div class="plan-price-unit">/ month</div>
+        </div>
+        <p class="plan-desc" style="margin-bottom:20px">Unlimited leads, unlimited templates। Scale karo bina limits ke।</p>
+        <ul class="features-list">
+          <li><span class="fi-check">✓</span><span class="fi-text"><strong>Unlimited</strong> DM Templates</span></li>
+          <li><span class="fi-check">✓</span><span class="fi-text"><strong>Unlimited</strong> Leads</span></li>
+          <li><span class="fi-check">✓</span><span class="fi-text">Advanced Analytics Dashboard</span></li>
+          <li><span class="fi-check">✓</span><span class="fi-text">Priority WhatsApp Support</span></li>
+          <li><span class="fi-check">✓</span><span class="fi-text">Custom Trigger Keywords</span></li>
+          <li><span class="fi-check">✓</span><span class="fi-text">Bulk CSV + Reports</span></li>
+          <li><span class="fi-check">✓</span><span class="fi-text">AI Replies (Coming Soon)</span></li>
+          <li><span class="fi-check">✓</span><span class="fi-text">Cancel Anytime</span></li>
+        </ul>
+        <button class="btn btn-primary btn-full" id="btn-upgrade" onclick="handleUpgrade()">
+          ⚡ PRO UPGRADE — ₹499/MONTH
+        </button>
+        <div style="text-align:center;font-size:12px;color:var(--w3);margin-top:10px;font-family:'DM Mono',monospace">
+          UPI · Cards · Netbanking · Wallets
+        </div>
+      </div>
+    </div>
+
+    <!-- Guarantee -->
+    <div class="guarantee-box rise d4">
+      <div class="guarantee-icon">🛡️</div>
+      <div class="guarantee-title">7-DAY MONEY BACK</div>
+      <p class="guarantee-text">Pro plan lene ke baad 7 din mein kisi bhi reason se full refund milega। No questions asked। Bas email karo: <a href="mailto:support@leadmachine.in" style="color:var(--saffron)">support@leadmachine.in</a></p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <div class="faq-title">COMMON QUESTIONS</div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Free trial mein card kyun nahi chahiye?<span class="arrow">+</span></button>
+        <div class="faq-a">Hum believe karte hain ki product pehle try karo, phir pay karo। 7 din free mein puri features use karo। Trial khatam ho to tabhi decide karo।</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Trial expire hone ke baad kya hoga?<span class="arrow">+</span></button>
+        <div class="faq-a">Trial expire hone par bot automatically pause ho jayega। Aapka data safe rahega। Upgrade karo aur immediately active ho jayega।</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">₹499/month mein kya-kya milega?<span class="arrow">+</span></button>
+        <div class="faq-a">Unlimited leads, unlimited DM templates, advanced analytics, priority WhatsApp support, bulk CSV export, custom trigger keywords, aur aane wale AI replies feature का early access।</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Cancel kaise karein?<span class="arrow">+</span></button>
+        <div class="faq-a">Dashboard → Settings → Cancel Subscription। Ek click mein cancel। Current billing period ke end tak access rahega। Koi penalty nahi।</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Payment secure hai?<span class="arrow">+</span></button>
+        <div class="faq-a">Haan। Hum Razorpay use karte hain — India ka most trusted payment gateway। UPI, cards, netbanking, wallets sab supported। Aapka card data hum kabhi store nahi karte।</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">GST invoice milegi?<span class="arrow">+</span></button>
+        <div class="faq-a">Haan। Har payment ke baad automatic GST invoice email ho jaati hai। Business expenses ke liye claim kar sakte hain।</div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer z1">
+  <div class="footer-inner">
+    <div class="footer-logo"><span class="o">L</span>M</div>
+    <div class="footer-links">
+      <a href="about.html" class="footer-link">About</a>
+      <a href="contact.html" class="footer-link">Contact</a>
+      <a href="terms.html" class="footer-link">Terms</a>
+      <a href="privacy.html" class="footer-link">Privacy</a>
+    </div>
+    <div class="footer-copy">© 2025 LEADMACHINE · 🇮🇳</div>
+  </div>
+</footer>
+
+<div id="toast-area"></div>
+
+<script type="module">
+  import { requireAuth, getProfile, openRazorpayCheckout, toast, RAZORPAY_KEY_ID } from '../assets/firebase.js';
+
+  window.handleUpgrade = async function() {
+    try {
+      // Check if logged in
+      const auth = (await import("https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js")).getAuth();
+      const user = auth.currentUser;
+      if (!user) { window.location.href = 'signup.html'; return; }
+
+      const profile = await getProfile(user.uid);
+      const btn     = document.getElementById('btn-upgrade');
+      btn.disabled  = true;
+      btn.innerHTML = '<span class="spinner"></span> Creating order...';
+
+      // Call backend to create Razorpay order
+      const res  = await fetch('/api/payment/create-order', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${await user.getIdToken()}` },
+        body:    JSON.stringify({ plan: 'paid' })
+      });
+      const data = await res.json();
+      if (!data.orderId) throw new Error(data.error || 'Order creation failed');
+
+      await openRazorpayCheckout({
+        orderId:   data.orderId,
+        amount:    499,
+        name:      profile.name || '',
+        email:     profile.email || user.email,
+        phone:     '',
+        onSuccess: async (response) => {
+          // Verify payment on backend
+          const vres = await fetch('/api/payment/verify', {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${await user.getIdToken()}` },
+            body:    JSON.stringify(response)
+          });
+          const vdata = await vres.json();
+          if (vdata.success) {
+            toast('🎉 Pro plan activate ho gaya!', 'success');
+            setTimeout(() => window.location.href = 'dashboard.html', 1500);
+          } else {
+            toast('❌ Payment verify failed. Support se contact karo।', 'error');
+          }
+        },
+        onFailure: (err) => {
+          toast('❌ Payment failed: ' + (typeof err === 'string' ? err : 'Try again'), 'error');
+          btn.disabled = false;
+          btn.innerHTML = '⚡ PRO UPGRADE — ₹499/MONTH';
+        }
+      });
+
+      btn.disabled = false;
+      btn.innerHTML = '⚡ PRO UPGRADE — ₹499/MONTH';
+    } catch(err) {
+      toast(err.message || 'Something went wrong', 'error');
+      const btn = document.getElementById('btn-upgrade');
+      btn.disabled = false;
+      btn.innerHTML = '⚡ PRO UPGRADE — ₹499/MONTH';
+    }
+  };
+
+  window.toggleFaq = function(btn) {
+    btn.classList.toggle('open');
+    const ans = btn.nextElementSibling;
+    ans.classList.toggle('open');
+  };
+</script>
+</body>
+</html>
